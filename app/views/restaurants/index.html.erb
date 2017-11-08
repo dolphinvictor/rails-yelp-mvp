@@ -1,0 +1,14 @@
+<h1>Restaurant list</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %><!-- no puts -->
+    <li>
+      <strong>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      </strong>
+      <%= restaurant.address %>
+    </li>
+  <% end %><!-- no puts -->
+</ul>
+
+<%= link_to 'Add a restaurant to the list', new_restaurant_path, class: "btn btn-warning" %>
